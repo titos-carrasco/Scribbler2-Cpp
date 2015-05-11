@@ -26,3 +26,14 @@
 *.exe
 *.out
 *.app
+
+# CodeLite
+.clang
+.codelite
+*.project
+*.workspace
+*.mk
+Makefile
+Release
+Debug
+
