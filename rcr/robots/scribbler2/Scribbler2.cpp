@@ -23,7 +23,8 @@ Scribbler2::Scribbler2( const std::string& port, int timeout ):
     f2Camera( * this ),
     f2Inner( *this ),
     f2IRSensors( *this ),
-    f2LEDs( *this )
+    f2LEDs( *this ),
+    f2Servos( *this )
 {
     rcr::utils::Utils::pause( 1000 );
     serial.flushRead( 1000 );
@@ -95,6 +96,10 @@ F2IRSensors& Scribbler2::getF2IRSensors() {
 
 F2LEDs& Scribbler2::getF2LEDs() {
     return f2LEDs;
+}
+
+F2Servos& Scribbler2::getF2Servos() {
+    return f2Servos;
 }
 
 bool Scribbler2::sendS2Command( const uint8_t packet[PACKET_LENGTH], int pause )

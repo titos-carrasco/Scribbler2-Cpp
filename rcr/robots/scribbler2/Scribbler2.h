@@ -19,6 +19,7 @@
 #include "F2Inner.h"
 #include "F2IRSensors.h"
 #include "F2LEDs.h"
+#include "F2Servos.h"
 
 namespace rcr {
 namespace robots {
@@ -46,6 +47,7 @@ private:
     F2Inner f2Inner;
     F2IRSensors f2IRSensors;
     F2LEDs f2LEDs;
+    F2Servos f2Servos;
 
 public:
     Scribbler2( const std::string& port, int timeout );
@@ -65,6 +67,7 @@ public:
     F2Inner& getF2Inner();
     F2IRSensors& getF2IRSensors();
     F2LEDs& getF2LEDs();
+    F2Servos& getF2Servos();
     bool sendS2Command( const uint8_t packet[PACKET_LENGTH], int pause );
     void sendS2PathCommand( const uint8_t packet[PACKET_LENGTH] );
     void sendF2Command( const uint8_t packet[], int len, int pause );
